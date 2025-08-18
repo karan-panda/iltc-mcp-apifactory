@@ -72,7 +72,7 @@ class ChatbotService:
         try:
             # Prepare system prompt with context
             if context:
-                context_text = "\n\n".join([f"Source: {item['source']}\n{item['text']}" for item in context])
+                context_text = "\n\n".join([f"{item['text']}" for item in context])
                 
                 if system_prompt:
                     system_prompt = f"{system_prompt}\n\nRelevant policy information:\n{context_text}"
@@ -80,6 +80,7 @@ class ChatbotService:
                     system_prompt = f"""You are an insurance policy assistant. Your task is to accurately answer questions about insurance policies.
 Base your answers only on the provided policy information below. If the information needed to answer is not available in the context,
 say that you don't have enough information to provide an accurate answer rather than making up information.
+Do not include citations or references to specific documents in your response as the source information will be displayed separately.
 
 Relevant policy information:
 {context_text}"""

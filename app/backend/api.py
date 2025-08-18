@@ -32,6 +32,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Import MCP router if available
+try:
+    from app.mcp.api import router as mcp_router
+    app.include_router(mcp_router)
+    logger.info("MCP API router included")
+except ImportError:
+    logger.warning("MCP API router not available, skipping")
+
 # Initialize services
 embedding_service = EmbeddingService()
 # We'll initialize the chatbot service on demand with the requested model
@@ -108,8 +116,8 @@ Always cite your sources by indicating which policy document (Travel or Health) 
         for result in context_results:
             try:
                 source = {
-                    "name": result.get("source", "Unknown"),
-                    "type": result.get("doc_type", "Unknown"),
+                    "name": result.get("source", "Deafault"),
+                    "type": result.get("doc_type", "Deafault"),
                 }
                 if source not in sources:
                     sources.append(source)

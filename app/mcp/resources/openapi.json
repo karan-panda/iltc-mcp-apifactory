@@ -1,0 +1,218 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IL TakeCare MCP API",
+    "description": "Model Context Protocol API for enhanced insurance policy assistant",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/mcp/query": {
+      "post": {
+        "summary": "Enhanced query with MCP framework",
+        "description": "Accepts user questions and provides structured responses using the MCP framework",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "question": {
+                    "type": "string",
+                    "description": "User's question about insurance policies"
+                  },
+                  "chat_history": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "enum": ["user", "assistant"]
+                        },
+                        "content": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "description": "Previous conversation history"
+                  },
+                  "session_id": {
+                    "type": "string",
+                    "description": "Optional session ID for maintaining context"
+                  },
+                  "tools": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "tool_type": {
+                          "type": "string",
+                          "enum": [
+                            "vector_search",
+                            "intent_detection",
+                            "policy_lookup",
+                            "faq_lookup",
+                            "coverage_comparison",
+                            "premium_calculation"
+                          ]
+                        },
+                        "parameters": {
+                          "type": "object",
+                          "description": "Tool-specific parameters"
+                        }
+                      }
+                    },
+                    "description": "Optional specific tools to use in this query"
+                  },
+                  "temperature": {
+                    "type": "number",
+                    "description": "Temperature for model generation",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": 0.7
+                  }
+                },
+                "required": ["question"]
+              },
+              "examples": {
+                "basic": {
+                  "value": {
+                    "question": "What does travel insurance cover for medical emergencies?"
+                  }
+                },
+                "with_intent": {
+                  "value": {
+                    "question": "I want to purchase TripSecure+",
+                    "tools": [
+                      {
+                        "tool_type": "intent_detection",
+                        "parameters": {}
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "answer": {
+                      "type": "string",
+                      "description": "Answer to the user's question"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Sources used to generate the answer"
+                    },
+                    "session_id": {
+                      "type": "string",
+                      "description": "Session ID for continuing the conversation"
+                    },
+                    "detected_intent": {
+                      "type": "object",
+                      "properties": {
+                        "intent": {
+                          "type": "string"
+                        },
+                        "route": {
+                          "type": "string"
+                        },
+                        "score": {
+                          "type": "number"
+                        }
+                      },
+                      "description": "Detected user intent"
+                    },
+                    "tool_results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "tool_type": {
+                            "type": "string"
+                          },
+                          "result": {
+                            "type": "object"
+                          },
+                          "error": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "description": "Results from executed tools"
+                    }
+                  }
+                },
+                "example": {
+                  "answer": "Based on your Travel Insurance document, medical emergencies are covered including doctor visits, hospital stays, and emergency evacuations when traveling abroad. The policy typically covers costs of emergency medical treatment, hospitalization, and prescribed medicines. Be sure to keep all receipts for claim reimbursement.",
+                  "sources": [
+                    {
+                      "name": "travel_insurance.pdf",
+                      "type": "Travel Insurance"
+                    }
+                  ],
+                  "session_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "detected_intent": {
+                    "intent": "Information Query",
+                    "route": "/info/travel",
+                    "score": 0.92
+                  },
+                  "tool_results": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "tripsecure_plus": {
+    "proposer_details": {
+      "name": "Rohit Rajendra Rege",
+      "gender": "Male",
+      "ckyc_number": null,
+      "contact_number": "77******23",
+      "email_id": "RO***********@GMAIL.COM",
+      "address": "FLAT NO 304, B WING, MAHALAXMI TERRACES APARTMENT, SARDAR PARK, DEVKAR PANAND, KOLHAPUR, MAHARASHTRA, 416007",
+      "is_pep_or_relative": "No"
+    },
+    "policy_details": {
+      "policy_number": "4233/400973492/00/000",
+      "visa_type": "Non Immigrant",
+      "product_name": "TripSecure+",
+      "trip_type": "Single Trip",
+      "product_code": "4233",
+      "geographical_scope": "Asia",
+      "policy_issue_date": "July 22, 2025, 00:00 hrs",
+      "policy_start_date": "July 29, 2025, 00:00 hrs",
+      "policy_end_date": "July 30, 2025, 23:59 hrs",
+      "travel_days": "2 Days",
+      "insured_location_at_issuance": "India",
+      "alternative_policy_number": "638888176435441013"
+    },
+    "insured_details": {
+      "name": "Rohit Rajendra Rege",
+      "date_of_birth": "February 22, 1996",
+      "sum_insured_in_usd": "50,000",
+      "passport_number": "TESTPASS",
+      "pre_existing_diseases": "Not Applicable",
+      "proposer_relationship": "Self",
+      "nominee_name": "Test",
+      "nominee_relationship": "Brother",
+      "nominee_date_of_birth": "February 22, 1996",
+      "appointee_name": "Not Applicable",
+      "appointee_relationship": "Not Applicable"
+    },
+    "coverages": [
+      {
+        "cover_name": "Hospitalisation Expenses for Injury and Illness",
+        "benefits": "We'll cover your medical bills if you fall sick or get injured on your trip.",
+        "sum_insured": "USD 50,000",
+        "deductibles": "USD 100",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Outpatient Treatment for Illness and Injury",
+        "benefits": "We'll cover expenses for doctor visits and diagnosis for any illness or injury during your trip.",
+        "sum_insured": "USD 10,000",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Medical Evacuation",
+        "benefits": "We'll cover the cost if you need emergency transport or evacuation due to illness or injury.",
+        "sum_insured": "USD 50,000",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Repatriation of Remains",
+        "benefits": "We'll cover costs to bring remains home or to handle local arrangements, in case of a tragedy.",
+        "sum_insured": "USD 50,000",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Dental Treatment",
+        "benefits": "We'll cover emergency dental care for sudden pain or accidents during your trip.",
+        "sum_insured": "USD 250",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Accidental Death and Disablement - Common Carrier",
+        "benefits": "We'll provide a payout in case of death or permanent disablement if an accident takes place while you're traveling in public/common carrier as a passenger.",
+        "sum_insured": "USD 15,000",
+        "deductibles": "Not Applicable",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Credit Card Secure",
+        "benefits": "We'll cover your credit card's outstanding balance as on date of accident, in case of death or disability.",
+        "sum_insured": "USD 500",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Personal Accident",
+        "benefits": "We'll provide a lump sum payout in case of death or permanent disability due to an accident.",
+        "sum_insured": "USD 15,000",
+        "deductibles": "Not Applicable",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Debit and Credit Card and Forex Card - Fraudulent Utilization",
+        "benefits": "We'll cover your financial loss due to fraudulent utilization of your debit, credit, or forex card if it is stolen or lost.",
+        "sum_insured": "USD 500",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Loss of Valuables Including Personal Money",
+        "benefits": "We'll cover loss of valuables including money, due to theft or similar incidents.",
+        "sum_insured": "USD 500",
+        "deductibles": "USD 100",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Loss of Checked-in Baggage",
+        "benefits": "We'll reimburse you for lost checked-in baggage.",
+        "sum_insured": "USD 500",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Delay of Checked-in Baggage",
+        "benefits": "We'll provide a fixed allowance for your expenses, if your baggage is delayed more than the specified hours",
+        "sum_insured": "USD 50",
+        "deductibles": "6 Hrs",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Loss of Baggage and Personal Effects",
+        "benefits": "We'll reimburse you for lost baggage and personal items due to theft or similar events.",
+        "sum_insured": "USD 500",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Loss of Electronic Equipment",
+        "benefits": "We'll cover the loss of electronic items due to theft or similar events.",
+        "sum_insured": "USD 500",
+        "deductibles": "USD 100",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Curtailment",
+        "benefits": "We'll cover additional expenses if your pre-booked transport or accommodation is bounced by the airlines or hotel.",
+        "sum_insured": null,
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Missed Connecting Flight",
+        "benefits": "We'll reimburse you, if you miss a connecting flight due to delayed arrival of earlier flight/common carrier.",
+        "sum_insured": "USD 500, USD 1,000, USD 500, USD 500, USD 200, 500, USD 5,000",
+        "deductibles": "3 Delay hours",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Trip Cancellation",
+        "benefits": "We'll cover your financial loss if you need to cancel your trip due to unforeseen events like sickness or natural disasters.",
+        "sum_insured": null,
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Loss of Passport and International Driving License",
+        "benefits": "We'll provide a fixed payout if you lose or damage your passport or international driving license.",
+        "sum_insured": null,
+        "deductibles": "Not Applicable",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Trip Interruption or Curtailment",
+        "benefits": "We'll cover your financial loss if you need to interrupt/ shorten your trip due to unexpected events.",
+        "sum_insured": "USD",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Hotel Extension due to Contingency",
+        "benefits": "We'll reimburse costs, if you need to extend your hotel stay due to unexpected delays like terrorism, loss of passport, political risk etc.",
+        "sum_insured": null,
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Political Risk And Catastrophe Evacuation",
+        "benefits": "We'll cover the cost to get you back home or to a safe place during a political unrest or natural disaster.",
+        "sum_insured": "USD 5,000",
+        "deductibles": "USD 0",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Common Carrier Delay",
+        "benefits": "We'll provide a fixed payout if your scheduled travel on a common carrier is delayed.",
+        "sum_insured": "USD 50",
+        "deductibles": "375 Mins",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      },
+      {
+        "cover_name": "Compassionate Visit",
+        "benefits": "We'll reimburse travel and accommodation costs for a family member to visit you if you're hospitalized for a specified duration.",
+        "sum_insured": "USD 5,000",
+        "deductibles": "Not Applicable",
+        "co_pay": "Not Applicable",
+        "timeframe": "Not Applicable"
+      }
+    ]
+  },
+  "elevate": {
+    "proposer_details": {
+      "name": "Example User",
+      "gender": "Female",
+      "ckyc_number": null,
+      "contact_number": "99******88",
+      "email_id": "ex***********@GMAIL.COM",
+      "address": "Example Address, Example City, Example State, 123456",
+      "is_pep_or_relative": "No"
+    },
+    "policy_details": {
+      "policy_number": "4225/300456789/00/000",
+      "product_name": "Elevate",
+      "product_code": "4225",
+      "policy_issue_date": "May 15, 2025, 00:00 hrs",
+      "policy_start_date": "June 1, 2025, 00:00 hrs",
+      "policy_end_date": "May 31, 2026, 23:59 hrs",
+      "insured_location_at_issuance": "India",
+      "alternative_policy_number": "638756432198765432"
+    },
+    "insured_details": {
+      "name": "Example User",
+      "date_of_birth": "April 10, 1990",
+      "sum_insured_in_inr": "500,000",
+      "pre_existing_diseases": "None",
+      "proposer_relationship": "Self",
+      "nominee_name": "Example Nominee",
+      "nominee_relationship": "Spouse",
+      "nominee_date_of_birth": "October 15, 1992"
+    }
+  }
+}

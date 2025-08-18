@@ -1,0 +1,24 @@
+{
+  "4233": {
+    "name": "TripSecure+",
+    "type": "travel",
+    "key_features": [
+      "Covers trip cancellation and interruption",
+      "Medical emergency coverage abroad",
+      "Lost baggage protection",
+      "24/7 travel assistance"
+    ],
+    "route": "/buy-policy/travel/tripsecure-plus"
+  },
+  "4225": {
+    "name": "Elevate Health Insurance",
+    "type": "health",
+    "key_features": [
+      "Comprehensive health coverage",
+      "No co-pay for preventive care",
+      "Global coverage for emergency treatment",
+      "Wellness program included"
+    ],
+    "route": "/buy-policy/health/elevate"
+  }
+}
