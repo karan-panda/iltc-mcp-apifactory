@@ -34,7 +34,7 @@ class MCPQueryResponse(BaseModel):
     answer: str
     sources: List[Dict[str, str]]
     session_id: str
-    detected_intent: Optional[Dict[str, Any]] = None
+    detected_intent: Optional[List[Dict[str, Any]]] = None
     tool_results: Optional[List[Dict[str, Any]]] = None
 
 

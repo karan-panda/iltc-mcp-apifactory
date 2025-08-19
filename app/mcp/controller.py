@@ -75,16 +75,23 @@ class MCPController:
         # Always run intent detection first
         intent_tool = self.tools[ToolType.INTENT_DETECTION]
         try:
-            intent_result = intent_tool.run(request.user_query)
-            # Check if intent_result is a dictionary before accessing it
-            if isinstance(intent_result, dict):
-                detected_intent = intent_result
+            detected_intent = intent_tool.run(request.user_query)
+            # Check if we have a valid list of intents
+            if detected_intent and isinstance(detected_intent, list) and len(detected_intent) > 0:
+                # Log the top intent
+                top_intent = detected_intent[0]
+                logger.info(f"Top intent: {top_intent['intent']} with score: {top_intent['score']}")
+                
+                # Log secondary intents if available
+                if len(detected_intent) > 1:
+                    secondary_intents = [f"{intent['intent']} ({intent['score']:.2f})" for intent in detected_intent[1:]]
+                    logger.info(f"Secondary intents: {', '.join(secondary_intents)}")
             else:
-                logger.warning(f"Unexpected intent result type: {type(intent_result)}")
-                detected_intent = {"intent": None, "route": None, "score": 0.0}
+                logger.warning(f"Unexpected intent result type or empty list: {type(detected_intent)}")
+                detected_intent = [{"intent": None, "route": None, "score": 0.0}]
         except Exception as e:
             logger.error(f"Error in intent detection: {str(e)}")
-            detected_intent = {"intent": None, "route": None, "score": 0.0}
+            detected_intent = [{"intent": None, "route": None, "score": 0.0}]
         
         # Process explicitly requested tools
         if request.tools:
@@ -155,9 +162,18 @@ state that you don't have enough information to provide an accurate answer rathe
 
 Do not include citations or references to specific documents in your response as the source information will be displayed separately."""
         
-        # Enhance prompt with intent if detected
-        if detected_intent and 'intent' in detected_intent and detected_intent['intent']:
-            system_prompt += f"\n\nI detected that the user's intent may be: {detected_intent['intent']}. Consider this when providing your response."
+        # Enhance prompt with intents if detected
+        if detected_intent and isinstance(detected_intent, list) and len(detected_intent) > 0:
+            # Add the primary intent
+            primary_intent = detected_intent[0]
+            if 'intent' in primary_intent and primary_intent['intent']:
+                system_prompt += f"\n\nI detected that the user's primary intent may be: {primary_intent['intent']}. Consider this when providing your response."
+            
+            # Add secondary intents if available
+            if len(detected_intent) > 1:
+                secondary_intents = [intent['intent'] for intent in detected_intent[1:] if intent.get('intent')]
+                if secondary_intents:
+                    system_prompt += f"\n\nAlternative intents to consider: {', '.join(secondary_intents)}."
         
         response_text = self.chatbot_service.generate_response(
             query=request.user_query,
@@ -201,7 +217,7 @@ Do not include citations or references to specific documents in your response as
             response=response_text,
             sources=sources,
             tool_results=tool_results,
-            detected_intent=intent_result
+            detected_intent=detected_intent
         )
         
     def _format_policy_data(self, policy_data: Dict[str, Any]) -> str:

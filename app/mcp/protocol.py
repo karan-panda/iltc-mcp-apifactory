@@ -59,7 +59,7 @@ class MCPResponse(BaseModel):
     response: str
     sources: Optional[List[Dict[str, Any]]] = None
     tool_results: Optional[List[ToolResponse]] = None
-    detected_intent: Optional[Dict[str, Any]] = None
+    detected_intent: Optional[List[Dict[str, Any]]] = None
 
 
 class MCPSession(BaseModel):
